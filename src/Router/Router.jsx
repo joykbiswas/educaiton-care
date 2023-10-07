@@ -3,6 +3,7 @@ import Root from "../Component/Root/Root";
 import Home from "../Component/Page/Home";
 import Login from "../Component/Page/Login/Login";
 import Register from "../Component/Page/Register/Register";
+import Author from "../Component/Page/Author/Author";
 
 
 const router = createBrowserRouter([
@@ -22,6 +23,11 @@ const router = createBrowserRouter([
         {
             path:"/register",
             element:<Register></Register>
+        },
+        {
+          path:"/",
+          element:<Author></Author>,
+          loader:()=>fetch('/author.json')
         }
       ]
     },

@@ -1,22 +1,23 @@
 import PropTypes from "prop-types";
 
 const EducationCards = ({ education }) => {
-  const {  title, img ,description  } = education;
-  console.log(education);
+  const {  title, img ,description ,category } = education;
+  // console.log(education);
   return (
-    <div className="">
       <div className=" ">
-        <div className="flex  card  bg-base-100 shadow-xl">
+        <div className=" flex flex-col card  bg-base-100 shadow-xl">
           <figure>
             <img className="w-full h-52" src={img} alt="Shoes" />
           </figure>
-          <div className="card-body">
-            <h2 className="card-title">{title}</h2>
-            <div className="grow" >
+          <div className=" flex-grow card-body">
+
+            <h2 className=" card-title">{title}</h2>
+            <h2 className="">{category}</h2>
+            <div className="" >
                 {
-                    description.length >150 ?(
+                    description.length >130 ?(
                         <p>
-                          {description.slice(0,150)}
+                          {description.slice(0,130)}
                           reed more...
                         </p>
                     )
@@ -31,7 +32,7 @@ const EducationCards = ({ education }) => {
           </div>
         </div>
       </div>
-    </div>
+    
   );
 };
 
