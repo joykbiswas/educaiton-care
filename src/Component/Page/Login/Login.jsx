@@ -1,14 +1,43 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+// import Navbar from "../Shared/Navbar/Navbar";
+// import { AuthContext } from "../../Provider/AuthProvider";
+import { useContext, useState } from "react";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
 import Navbar from "../Navbar/Navbar";
 
-
 const Login = () => {
-    return (
-        <div>
+  const {logIn} = useContext(AuthContext)
+  const location = useLocation();
+  console.log('location in the login page', location);
+ 
+  const navigate = useNavigate()
+  const [error,setError] =useState('')
+
+    const handleLogin=(e)=>{
+      e.preventDefault();
+      const email = e.target.email.value;
+      const password = e.target.password.value;
+      console.log(email,password);
+
+      logIn(email,password)
+      .then(result=>{
+        console.log(result.user);
+
+        //navigate after login
+        navigate(location?.state ? location.state : '/')
+      })
+      .catch(error=>{
+        // setError('Wrong password')
+        setError(error.message)
+        console.error(error)
+      })
+    }
+  return (
+    <div>
       <Navbar></Navbar>
       <h2 className="text-3xl text-center">Please Login </h2>
       <div className="w-1/2 mx-auto">
-        <form  className="card-body">
+        <form onSubmit={handleLogin} className="card-body">
           <div className="form-control">
             <label className="label">
               <span className="label-text">Email</span>
@@ -38,9 +67,10 @@ const Login = () => {
               </a>
             </label>
           </div>
+          <p className="text-red-500">{error}</p>
           <div className="form-control mt-6">
             <button className="btn btn-primary">Login</button>
-           
+            
             <p>you do not have account? 
                 <Link to="/register" className="text-red-400 p-4">Register</Link>
             </p>
@@ -48,7 +78,7 @@ const Login = () => {
         </form>
       </div>
     </div>
-    );
+  );
 };
 
 export default Login;

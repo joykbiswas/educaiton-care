@@ -4,6 +4,8 @@ import Home from "../Component/Page/Home";
 import Login from "../Component/Page/Login/Login";
 import Register from "../Component/Page/Register/Register";
 import Author from "../Component/Page/Author/Author";
+import CourseDetails from "../Component/Page/CourseDetails/CourseDetails";
+import PrivateRoute from "./PrivateRoute";
 
 
 const router = createBrowserRouter([
@@ -23,6 +25,11 @@ const router = createBrowserRouter([
         {
             path:"/register",
             element:<Register></Register>
+        },
+        {
+          path:"/courseDetails/:id",
+          element:<PrivateRoute><CourseDetails></CourseDetails></PrivateRoute>,
+          loader:()=>fetch('/categories.json')
         },
         {
           path:"/",

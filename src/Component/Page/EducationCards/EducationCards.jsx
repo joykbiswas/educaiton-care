@@ -1,7 +1,9 @@
 import PropTypes from "prop-types";
+import { AiFillStar } from 'react-icons/ai';
+import { Link } from "react-router-dom";
 
 const EducationCards = ({ education }) => {
-  const {  title, img ,description ,category } = education;
+  const { id, title, img ,description ,category ,price,rating} = education;
   // console.log(education);
   return (
       <div className=" ">
@@ -12,13 +14,13 @@ const EducationCards = ({ education }) => {
           <div className=" flex-grow card-body">
 
             <h2 className=" card-title">{title}</h2>
-            <h2 className="">{category}</h2>
+            <h2 className=" ">{category}</h2>
             <div className="" >
                 {
                     description.length >130 ?(
-                        <p>
+                        <p >
                           {description.slice(0,130)}
-                          reed more...
+                          <span > reed more....</span>
                         </p>
                     )
                     :(
@@ -26,8 +28,12 @@ const EducationCards = ({ education }) => {
                     )
                 }
             </div>
+            <div className="flex justify-between">
+            <h2 className="flex items-center text-xl"><AiFillStar></AiFillStar>{rating}</h2>
+            <h2 className="text-xl">${price}</h2>
+            </div>
             <div className="card-actions justify-end">
-              <button className="btn btn-primary">Details</button>
+              <Link to={`/courseDetails/${id}`}><button className="btn btn-primary">Details</button></Link>
             </div>
           </div>
         </div>

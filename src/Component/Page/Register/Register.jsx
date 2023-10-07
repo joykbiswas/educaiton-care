@@ -1,13 +1,82 @@
-import { Link } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { FaGoogle } from "react-icons/fa";
+
+import { Link, useNavigate } from "react-router-dom";
+// import Navbar from "../Shared/Navbar/Navbar";
+import { useContext, useState } from "react";
+// import { AuthContext } from "../../Provider/AuthProvider";
 import Navbar from "../Navbar/Navbar";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 const Register = () => {
-    return (
-        <div>
-            <Navbar></Navbar>
-            <h2 className="text-3xl text-center">Please Register Now</h2>
+  const { createUser, handleUpdateProfile, googleLogin } =
+    useContext(AuthContext);
+  const [error, setError] = useState("");
+  const navigate = useNavigate();
+
+  const handleRegister = (e) => {
+    // const {googleLogin} =useContext(AuthContext);
+
+    e.preventDefault();
+    const name = e.target.name.value;
+    const photo = e.target.photo.value;
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+    console.log(email, password);
+
+    if (!/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/.test(password)) {
+      setError("Minimum eight characters, at least one letter and one number");
+      console.log(
+        "Minimum eight characters, at least one letter and one number"
+      );
+    } else {
+      console.log("password ok");
+      toast.success("register successfully");
+
+      createUser(email, password).then((result) => {
+        handleUpdateProfile(name, photo).then(() => {
+          navigate("/");
+        });
+      });
+    }
+
+    /*
+    createUser(email,password)
+    .then(result=>{
+      handleUpdateProfile(name,photo)
+      .then(()=>{
+        
+        navigate('/')
+
+      })
+      // console.log(result.user);
+    })
+    .catch(error=>{
+      // toast.error('Password should be at least 6 characters')
+      // if(!/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/.test(password) ){
+      //   setError('Minimum eight characters, at least one letter and one number');
+      //  }
+      console.error(error)
+    })
+    */
+  };
+
+  const handleGoogleLogin = () => {
+    googleLogin()
+      .then((result) => {
+        console.log(result.user);
+        toast.success("google login");
+      })
+      .catch((error) => console.error(error));
+  };
+
+  return (
+    <div>
+      <Navbar></Navbar>
+      <h2 className="text-3xl text-center">Please Register Now</h2>
       <div className="w-1/2 mx-auto">
-        <form  className="card-body">
+        <form onSubmit={handleRegister} className="card-body">
           <div className="form-control">
             <label className="label">
               <span className="label-text">Name</span>
@@ -29,7 +98,6 @@ const Register = () => {
               name="photo"
               placeholder="Photo url"
               className="input input-bordered"
-              
             />
           </div>
           <div className="form-control">
@@ -60,19 +128,36 @@ const Register = () => {
                 Forgot password?
               </a>
             </label>
-            
+            <p className="text-red-500">{error}</p>
           </div>
           <div className="form-control mt-6">
-            <button  className="btn btn-primary">Register</button>
-            <p> Already you  have account? 
-                <Link to="/login" className="text-blue-500 pl-2">login</Link>
+            <button className="btn btn-primary">Register</button>
+            <p>
+              {" "}
+              Already you have account?
+              <Link to="/login" className="text-blue-500 pl-2">
+                login
+              </Link>
             </p>
           </div>
+          <button
+            onClick={handleGoogleLogin}
+            className="btn text-green-600 text-2xl w-28 "
+          >
+            <FaGoogle></FaGoogle>
+          </button>
         </form>
       </div>
-      {/* <ToastContainer></ToastContainer> */}
-        </div>
-    );
+      <div>
+        {/* <button onClick={handleGoogleLogin}
+             className="btn btn-outline ">
+                <FaGoogle></FaGoogle>
+                Google login
+       </button> */}
+      </div>
+      <ToastContainer></ToastContainer>
+    </div>
+  );
 };
 
 export default Register;
