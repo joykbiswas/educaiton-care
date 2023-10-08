@@ -5,6 +5,7 @@ import EducationCards from "./EducationCards/EducationCards";
 import Category from "./Category/Category";
 import { useState } from "react";
 import Author from "./Author/Author";
+import From from "./Form/Form";
 
 
 
@@ -50,6 +51,7 @@ const Home = () => {
             ))}
             </div>
             <Author></Author>
+            <From></From>
         </div>
     );
 };

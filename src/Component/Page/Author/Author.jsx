@@ -14,7 +14,8 @@ const Author = () => {
     return (
         <div >
             <div>
-                <h3 className="text-3xl mt-10 mb-6">Meet Our Professor</h3>
+                <h3 className="text-4xl font-bold mt-10 mb-6">Meet Our professionals</h3>
+                <hr className="w-14 border-2 mb-6 border-zinc-950" />
             </div>
           
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
