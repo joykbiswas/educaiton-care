@@ -6,6 +6,7 @@ import Register from "../Component/Page/Register/Register";
 import Author from "../Component/Page/Author/Author";
 import CourseDetails from "../Component/Page/CourseDetails/CourseDetails";
 import PrivateRoute from "./PrivateRoute";
+import About from "../Component/Page/About/About";
 
 
 const router = createBrowserRouter([
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
           path:"/",
           element:<Author></Author>,
           loader:()=>fetch('/author.json')
+        },
+        {
+          path:"/about",
+          element:<About></About>
         }
       ]
     },

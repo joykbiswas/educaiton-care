@@ -64,7 +64,7 @@ const Navbar = () => {
                     </li>
                     <li>
                       <NavLink
-                        to="/donation"
+                        to="/about"
                         className={({ isActive, isPending }) =>
                           isPending
                             ? "pending"
@@ -73,7 +73,7 @@ const Navbar = () => {
                             : "text-xl"
                         }
                       >
-                        Donation
+                        About Us
                       </NavLink>
                     </li>
                     <li>
@@ -89,6 +89,11 @@ const Navbar = () => {
                       >
                         Statistics
                       </NavLink>
+                    </li>
+                    <li>
+                    {
+                     user ? <button onClick={handleSignOut} className="btn btn-sm">Sign Out</button>:''
+                     }
                     </li>
                   </ul>
                 </div>
@@ -120,7 +125,7 @@ const Navbar = () => {
                   </li>
                   <li>
                     <NavLink
-                      to="/donation"
+                      to="/about"
                       className={({ isActive, isPending }) =>
                         isPending
                           ? "pending"
@@ -129,7 +134,7 @@ const Navbar = () => {
                           : " text-xl "
                       }
                     >
-                      Donation
+                      About Us
                     </NavLink>
                   </li>
                 </ul>
@@ -178,7 +183,7 @@ const Navbar = () => {
 
           
         </div>
-        <div>
+        <div className="hidden lg:flex">
           {
               user ? <button onClick={handleSignOut} className="btn btn-sm">Sign Out</button>:''
             }
