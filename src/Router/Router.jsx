@@ -7,6 +7,7 @@ import Author from "../Component/Page/Author/Author";
 import CourseDetails from "../Component/Page/CourseDetails/CourseDetails";
 import PrivateRoute from "./PrivateRoute";
 import About from "../Component/Page/About/About";
+import PricingPlans from "../Component/Page/PricingPlans/PricingPlans";
 
 
 const router = createBrowserRouter([
@@ -40,6 +41,11 @@ const router = createBrowserRouter([
         {
           path:"/about",
           element:<About></About>
+        },
+        {
+          path:"pricing",
+          element:<PricingPlans></PricingPlans>,
+          loader:()=>fetch('/price.json')
         }
       ]
     },

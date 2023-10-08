@@ -78,7 +78,7 @@ const Navbar = () => {
                     </li>
                     <li>
                       <NavLink
-                        to="/statistics"
+                        to="/pricing"
                         className={({ isActive, isPending }) =>
                           isPending
                             ? "pending"
@@ -87,7 +87,7 @@ const Navbar = () => {
                             : "text-xl"
                         }
                       >
-                        Statistics
+                         Pricing Plans
                       </NavLink>
                     </li>
                     <li>
@@ -135,6 +135,20 @@ const Navbar = () => {
                       }
                     >
                       About Us
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink
+                      to="/pricing"
+                      className={({ isActive, isPending }) =>
+                        isPending
+                          ? "pending"
+                          : isActive
+                          ? "text-red-500 text-xl underline"
+                          : " text-xl "
+                      }
+                    >
+                      Pricing Plans
                     </NavLink>
                   </li>
                 </ul>

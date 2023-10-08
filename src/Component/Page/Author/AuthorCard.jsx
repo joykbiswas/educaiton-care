@@ -5,7 +5,7 @@ import { AiOutlineInstagram} from 'react-icons/ai'
 
 const AuthorCard = ({ author }) => {
     const {img,name,profession} =author;
-  console.log(author);
+  // console.log(author);
   return (
     <div>
       <div className="card lg:h-40 h-44 lg:card-side bg-base-100 shadow-xl">

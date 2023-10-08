@@ -1,31 +1,99 @@
 import Navbar from "../Navbar/Navbar";
 import AboutBanner from "./AboutBanner";
+import { FcSmartphoneTablet } from 'react-icons/fc';
+import { GiMaterialsScience,GiProgression,GiPencilBrush } from 'react-icons/gi';
+import { MdDesignServices } from 'react-icons/md';
+
 
 const About = () => {
-    return (
-        <div>
-            <Navbar></Navbar>
-            <h2 className="text-2xl">About section</h2>
-            <AboutBanner></AboutBanner>
-            <div  className=" flex border-2 max-w-5xl mx-auto space-x-3">
-                <div className="w-1/2 border-2">
-                    <h2>here is img</h2>
-                    <img className="  rounded-lg" src="https://i.ibb.co/bbWPRHw/instractor-img1.jpg" alt="" />
-                </div>
-
-                <div className="w-1/2 border-2 space-y-3 ">
-                    <h2>here ise two img</h2>
-                    <img className=" rounded-lg " src="https://i.ibb.co/C9843xV/instract-img2.jpg" alt="" />
-                <img className=" rounded-lg" src="https://i.ibb.co/d5ZdgmW/blogging1.jpg" alt="" />
-                </div>
-                
-            </div>
-            <div  className="max-w-5xl mx-auto">
-                <h2 className="text-3xl">We Are Education care, Online Course Since 1990</h2>
-                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis, ducimus optio? Fuga ut distinctio hic nesciunt consequatur adipisci, possimus eligendi dolores tempore, odit tenetur porro inventore omnis cum veritatis? Neque consequatur, voluptatum est quisquam aliquid nihil odit necessitatibus corrupti nisi libero adipisci repudiandae distinctio deserunt, ducimus quod. Odio voluptates, molestias delectus itaque excepturi natus, ut odit nisi maiores modi consequatur impedit aut? Ad iusto cupiditate quae, optio distinctio vel obcaecati nulla excepturi laborum tempore, commodi consequatur quos nisi maxime sequi laudantium facilis doloribus eveniet officia, possimus voluptatum error. Dolorem totam adipisci unde? Officia dolorum maxime provident minima quod qui tenetur.</p>
-            </div>
+  return (
+    <div>
+      <Navbar></Navbar>
+      
+      <AboutBanner></AboutBanner>
+      <div className=" flex  mt-5 max-w-5xl mx-auto gap-3">
+        <div className="flex-1 mx-auto  ">
+          
+          <img
+            className=" w-full h-full rounded-lg"
+            src="https://i.ibb.co/bbWPRHw/instractor-img1.jpg"
+            alt=""
+          />
         </div>
-    );
+
+        <div className="flex-1   space-y-3 ">
+          <div className="">
+            
+            <img
+              className=" rounded-lg "
+              src="https://i.ibb.co/C9843xV/instract-img2.jpg"
+              alt=""
+            />
+          </div>
+          <div className="">
+            
+            <img
+              className=" rounded-lg"
+              src="https://i.ibb.co/d5ZdgmW/blogging1.jpg"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+      <div className="max-w-5xl mx-auto space-y-4 mt-6">
+        <h2 className="text-3xl">
+          We Are <span className="font-bold text-red-400">Education care</span>, Online Course Since 1990
+        </h2>
+        <hr className="border-2  w-20 border-red-500" />
+        <p className="text-xl">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis,
+          ducimus optio? Fuga ut distinctio hic nesciunt consequatur adipisci,
+          possimus eligendi dolores tempore, odit tenetur porro inventore omnis
+          cum veritatis? Neque consequatur, voluptatum est quisquam aliquid
+          nihil odit necessitatibus corrupti nisi libero adipisci repudiandae
+          distinctio deserunt, ducimus quod. Odio voluptates, molestias delectus
+          itaque excepturi natus, ut odit nisi maiores modi consequatur impedit
+          aut? Ad iusto cupiditate quae, optio distinctio vel obcaecati nulla
+          excepturi laborum tempore, commodi consequatur quos nisi maxime sequi
+          laudantium facilis doloribus eveniet officia, possimus voluptatum
+          error. Dolorem totam adipisci unde? Officia dolorum maxime provident
+          minima quod qui tenetur.
+        </p>
+
+        <div>
+          <h2 className="text-3xl">Education care course <span className="font-bold text-blue-500">Category</span></h2>
+          <hr className="border-2 w-20 border-blue-500 mt-4"/>
+          <div className="flex   justify-between py-7">
+            <div className="text-5xl ">
+            <FcSmartphoneTablet className="mx-auto"></FcSmartphoneTablet>
+            <h2 className="text-xl">Responsive Website</h2>
+            </div>
+            <div className="text-5xl">
+            <GiMaterialsScience className="mx-auto"></GiMaterialsScience >
+            <h2 className="text-xl">Science</h2>
+            </div>
+            <div className="text-5xl">
+            <GiProgression className="mx-auto"></GiProgression>
+            <h2 className="text-xl">Marketing</h2>
+            </div>
+            <div className="text-5xl">
+            <MdDesignServices className="mx-auto"></MdDesignServices>
+            <h2 className="text-xl">IOS Application</h2>
+            </div>
+            <div className="text-5xl justify-center">
+            <GiPencilBrush className="mx-auto"></GiPencilBrush>
+            <h2 className="text-xl">Graphic Design</h2>
+            </div>
+            
+          
+            
+            
+           
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default About;

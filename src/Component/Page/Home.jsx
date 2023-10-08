@@ -12,24 +12,33 @@ import From from "./Form/Form";
 const Home = () => {
     const educations =useLoaderData();
     const [selectedCategory,setSelectedCategory] = useState(null)
-    const handleFilter =(category)=>{
-        setSelectedCategory(category);
-    }
+    // const handleFilter =(category)=>{
+    //     setSelectedCategory(category);
+    // }
     // console.log(educations);
 
     // const filteredEducations = educations.filter(
     //     (education) => selectedCategory === "all" || education.category === selectedCategory
     //   );
 
-      const filteredEducations =selectedCategory  ?   educations.filter((education) => education. category   === selectedCategory)
+    const filteredEducations = selectedCategory === "all" 
+  ? educations
+  : selectedCategory 
+  ? educations.filter((education) => education.category === selectedCategory)
+  : educations;
 
-     : educations
 
+    //   const filteredEducations =selectedCategory  ? 
+    //     educations.filter((education) => education. category   === selectedCategory)
+
+    //  : selectedCategory
+
+     console.log(selectedCategory);
     return (
         <div>
             <Navbar></Navbar>
             <Banner></Banner>
-            <Category handleFilter={handleFilter} ></Category>
+            <Category setSelectedCategory={setSelectedCategory} ></Category>
             {/* <div className="space-x-4">
               <button onClick={()=>handleFilter('all')} className="text-2xl active">All</button>
               <button onClick={()=>handleFilter('EducationalConferences')} className="text-2xl">EducationalConferences</button>

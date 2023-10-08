@@ -2,12 +2,12 @@
 import PropTypes from "prop-types";
 import { useState } from "react";
 
-const Category = ({ handleFilter }) => {
+const Category = ({ setSelectedCategory }) => {
   const [activeFilter, setActiveFilter] = useState("all");
 
   const handleButtonClick = (filter) => {
     setActiveFilter(filter);
-    handleFilter(filter);
+    setSelectedCategory(filter);
   };
 
   return (

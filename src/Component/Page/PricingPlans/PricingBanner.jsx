@@ -1,19 +1,20 @@
-const AboutBanner = () => {
-  return (
-    <div>
-      <div
+
+const PricingBanner = () => {
+    return (
+        <div>
+            <div
         className="hero min-h-[90vh]"
         style={{
-          backgroundImage: "url(https://i.ibb.co/6NKb3hm/Re-institute.jpg)",
+          backgroundImage: "url(https://i.ibb.co/thv93Tc/pricing-ban.webp)",
         }}
       >
         <div className="hero-overlay bg-opacity-10"></div>
         <div className="hero-content  text-neutral-content">
           <div className="">
-            <h1 className="mb-4 mt-48 text-7xl font-extrabold text-blue-600 ">
-              About US
+            <h1 className="mb-4 mt-36 text-7xl font-extrabold  ">
+              Pricing Plans
             </h1>
-            <hr className="w-14 border-2 mb-2 border-blue-500" />
+            <hr className="w-14 border-2 mb-4 " />
 
             <div className="space-x-5">
               <button className=" border p-3 text-lg font-bold hover:bg-white hover:text-black">
@@ -26,8 +27,8 @@ const AboutBanner = () => {
           </div>
         </div>
       </div>
-    </div>
-  );
+        </div>
+    );
 };
 
-export default AboutBanner;
+export default PricingBanner;
