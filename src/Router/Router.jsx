@@ -8,12 +8,14 @@ import CourseDetails from "../Component/Page/CourseDetails/CourseDetails";
 import PrivateRoute from "./PrivateRoute";
 import About from "../Component/Page/About/About";
 import PricingPlans from "../Component/Page/PricingPlans/PricingPlans";
+import ErrorPage from "../Component/Page/ErrorPage/ErrorPage";
 
 
 const router = createBrowserRouter([
     {
       path: "/",
       element: <Root></Root>,
+      errorElement:<ErrorPage></ErrorPage>,
       children:[
         {
             path:"/",

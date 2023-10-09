@@ -67,12 +67,14 @@ const About = () => {
         <div data-aos="fade-left" data-aos-offset="300">
           <h2 className="text-3xl">Education care course <span className="font-bold text-blue-500">Category</span></h2>
           <hr className="border-2 w-20 border-blue-500 mt-4"/>
-          <div className="flex   justify-between py-7">
-            <div className="text-5xl ">
-            <FcSmartphoneTablet className="mx-auto"></FcSmartphoneTablet>
+          <div className="flex  justify-between py-7">
+
+            <div className="text-5xl " >
+            <FcSmartphoneTablet className=" "></FcSmartphoneTablet>
             <h2 className="text-xl">Responsive Website</h2>
             </div>
-            <div className="text-5xl">
+
+            <div className="text-5xl ">
             <GiMaterialsScience className="mx-auto"></GiMaterialsScience >
             <h2 className="text-xl">Science</h2>
             </div>
