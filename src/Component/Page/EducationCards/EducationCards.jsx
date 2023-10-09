@@ -7,7 +7,9 @@ const EducationCards = ({ education }) => {
   // console.log(education);
   return (
       <div className=" ">
-        <div className=" flex flex-col card  bg-base-100 shadow-xl">
+        <div className=" flex flex-col card  bg-base-100 shadow-xl mt-10" data-aos="fade-up"
+     data-aos-offset="200"
+     >
           <figure>
             <img className="w-full h-52" src={img} alt="Shoes" />
           </figure>

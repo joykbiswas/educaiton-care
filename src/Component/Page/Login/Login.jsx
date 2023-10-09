@@ -1,6 +1,9 @@
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+
 import { Link, useLocation, useNavigate } from "react-router-dom";
-// import Navbar from "../Shared/Navbar/Navbar";
-// import { AuthContext } from "../../Provider/AuthProvider";
+
+
 import { useContext, useState } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import Navbar from "../Navbar/Navbar";
@@ -17,14 +20,17 @@ const Login = () => {
       e.preventDefault();
       const email = e.target.email.value;
       const password = e.target.password.value;
-      console.log(email,password);
+      
 
       logIn(email,password)
       .then(result=>{
         console.log(result.user);
-
+          
         //navigate after login
         navigate(location?.state ? location.state : '/')
+
+     toast.success("Login successfully");
+
       })
       .catch(error=>{
         // setError('Wrong password')
@@ -77,6 +83,7 @@ const Login = () => {
           </div>
         </form>
       </div>
+      <ToastContainer></ToastContainer>
     </div>
   );
 };

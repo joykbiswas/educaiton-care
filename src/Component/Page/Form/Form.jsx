@@ -3,7 +3,8 @@ const From = () => {
     <div>
       
       <div
-        className="hero min-h-screen mt-16"
+        className="hero min-h-screen mt-16" data-aos="fade-right"
+        data-aos-offset="300"
         style={{
           backgroundImage:
             "url(https://i.ibb.co/5cwyx2t/woman-taking-notes-during-team-meeting.jpg)",
@@ -11,7 +12,8 @@ const From = () => {
       >
         <div className=" bg-opacity-60"></div>
 
-        <div className="w-2/5 m-5 bg-slate-50 p-6">
+        <div className="w-2/5 m-5 bg-slate-50 p-6"  data-aos="fade-left"
+        data-aos-offset="600">
           <div className="mb-4 flex-row md:flex">
             <h2 className="text-5xl font-bold ">Apply Now</h2> 
             <img className="w-36 " src="https://i.ibb.co/hDHMhxD/free.jpg" alt="" />

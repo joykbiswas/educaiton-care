@@ -2,7 +2,8 @@
 
 const Sponcer = () => {
     return (
-        <div className="flex justify-between my-9">
+        <div className="flex justify-between my-9" data-aos="fade-right"
+        data-aos-offset="300">
             <img className="w-36 " src="https://i.ibb.co/XZH5JfQ/sponce-2.png" alt="" />
             <img className="w-40 " src="https://i.ibb.co/jVy1mMS/sponcer.png" alt="" />
             <img className="w-36 " src="https://i.ibb.co/55JTwWW/education-logo-free-vector.jpg" alt="" />

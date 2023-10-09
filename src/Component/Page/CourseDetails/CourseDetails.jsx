@@ -1,6 +1,8 @@
 import { useLoaderData, useParams } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
 import { useEffect, useState } from "react";
+import Sponcer from "../Sponcer/Sponcer";
+import Footer from "../Footer/Footer";
 
 const CourseDetails = () => {
   const [course, setCourse] = useState({});
@@ -36,6 +38,8 @@ const CourseDetails = () => {
           </div>
         </div>
       </div>
+      <Sponcer></Sponcer>
+       <Footer></Footer>
     </div>
   );
 };

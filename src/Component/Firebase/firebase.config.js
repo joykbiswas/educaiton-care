@@ -4,12 +4,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBtmf3ZnetIWE8pxPvKdzLWdFrsIkDlj5c",
-  authDomain: "education-care-16fe2.firebaseapp.com",
-  projectId: "education-care-16fe2",
-  storageBucket: "education-care-16fe2.appspot.com",
-  messagingSenderId: "1007838797612",
-  appId: "1:1007838797612:web:516dee4598a045e15ed689"
+  apiKey: import.meta.env.VITE_APIKEY,
+  authDomain: import.meta.env.VITE_AUTHDOMAIN,
+  projectId: import.meta.env.VITE_PROJECTID,
+  storageBucket: import.meta.env.VITE_STORAGEBUCKET,
+  messagingSenderId: import.meta.env.VITE_MESSAGINGSENDERID,
+  appId: import.meta.env.VITE_APPID,
 };
 
 // Initialize Firebase

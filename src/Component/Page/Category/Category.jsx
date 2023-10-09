@@ -1,4 +1,5 @@
 // import { NavLink } from "react-router-dom";
+
 import PropTypes from "prop-types";
 import { useState } from "react";
 
@@ -53,5 +54,5 @@ const Category = ({ setSelectedCategory }) => {
 export default Category;
 
 Category.propTypes = {
-  handleFilter: PropTypes.func,
+  setSelectedCategory: PropTypes.func,
 };

@@ -6,7 +6,8 @@ const Option = ({option}) => {
     const {Name, Features, Price} = option;
     // console.log(option);
     return (
-        <div className="border rounded-md flex flex-col p-3" >
+        <div className="border rounded-md flex flex-col p-3" data-aos="zoom-out-down"
+        data-aos-anchor-placement="center-bottom" data-aos-duration="2000">
             <h2 className="text-3xl font-bold text-center ">{Name}</h2>
             <h3 className="text-5xl text-center font-bold text-red-500">{Price} <br /></h3>
             <p className='text-4xl text-center'>Monthly</p>

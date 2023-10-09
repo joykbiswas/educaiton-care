@@ -3,9 +3,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { FaGoogle } from "react-icons/fa";
 
 import { Link, useNavigate } from "react-router-dom";
-// import Navbar from "../Shared/Navbar/Navbar";
 import { useContext, useState } from "react";
-// import { AuthContext } from "../../Provider/AuthProvider";
 import Navbar from "../Navbar/Navbar";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 
@@ -16,8 +14,7 @@ const Register = () => {
   const navigate = useNavigate();
 
   const handleRegister = (e) => {
-    // const {googleLogin} =useContext(AuthContext);
-
+   
     e.preventDefault();
     const name = e.target.name.value;
     const photo = e.target.photo.value;
@@ -41,25 +38,7 @@ const Register = () => {
       });
     }
 
-    /*
-    createUser(email,password)
-    .then(result=>{
-      handleUpdateProfile(name,photo)
-      .then(()=>{
-        
-        navigate('/')
-
-      })
-      // console.log(result.user);
-    })
-    .catch(error=>{
-      // toast.error('Password should be at least 6 characters')
-      // if(!/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/.test(password) ){
-      //   setError('Minimum eight characters, at least one letter and one number');
-      //  }
-      console.error(error)
-    })
-    */
+    
   };
 
   const handleGoogleLogin = () => {
@@ -149,11 +128,7 @@ const Register = () => {
         </form>
       </div>
       <div>
-        {/* <button onClick={handleGoogleLogin}
-             className="btn btn-outline ">
-                <FaGoogle></FaGoogle>
-                Google login
-       </button> */}
+        
       </div>
       <ToastContainer></ToastContainer>
     </div>

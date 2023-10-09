@@ -3,6 +3,8 @@ import AboutBanner from "./AboutBanner";
 import { FcSmartphoneTablet } from 'react-icons/fc';
 import { GiMaterialsScience,GiProgression,GiPencilBrush } from 'react-icons/gi';
 import { MdDesignServices } from 'react-icons/md';
+import Sponcer from "../Sponcer/Sponcer";
+import Footer from "../Footer/Footer";
 
 
 const About = () => {
@@ -11,7 +13,9 @@ const About = () => {
       <Navbar></Navbar>
       
       <AboutBanner></AboutBanner>
-      <div className=" flex  mt-5 max-w-5xl mx-auto gap-3">
+      <div className=" flex  mt-5 max-w-5xl mx-auto gap-3" data-aos="fade-right"
+     data-aos-offset="300"
+     data-aos-easing="ease-in-sine">
         <div className="flex-1 mx-auto  ">
           
           <img
@@ -45,7 +49,7 @@ const About = () => {
           We Are <span className="font-bold text-red-400">Education care</span>, Online Course Since 1990
         </h2>
         <hr className="border-2  w-20 border-red-500" />
-        <p className="text-xl">
+        <p className="text-xl" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis,
           ducimus optio? Fuga ut distinctio hic nesciunt consequatur adipisci,
           possimus eligendi dolores tempore, odit tenetur porro inventore omnis
@@ -60,7 +64,7 @@ const About = () => {
           minima quod qui tenetur.
         </p>
 
-        <div>
+        <div data-aos="fade-left" data-aos-offset="300">
           <h2 className="text-3xl">Education care course <span className="font-bold text-blue-500">Category</span></h2>
           <hr className="border-2 w-20 border-blue-500 mt-4"/>
           <div className="flex   justify-between py-7">
@@ -92,6 +96,9 @@ const About = () => {
           </div>
         </div>
       </div>
+
+      <Sponcer></Sponcer>
+       <Footer></Footer>
     </div>
   );
 };

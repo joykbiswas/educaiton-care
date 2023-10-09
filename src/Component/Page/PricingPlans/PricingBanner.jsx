@@ -3,13 +3,13 @@ const PricingBanner = () => {
     return (
         <div>
             <div
-        className="hero min-h-[90vh]"
+        className="hero min-h-[90vh]" data-aos="fade-right" data-aos-duration="1000"
         style={{
           backgroundImage: "url(https://i.ibb.co/thv93Tc/pricing-ban.webp)",
         }}
       >
         <div className="hero-overlay bg-opacity-10"></div>
-        <div className="hero-content  text-neutral-content">
+        <div className="hero-content  text-neutral-content" data-aos="fade-left" data-aos-duration="3000">
           <div className="">
             <h1 className="mb-4 mt-36 text-7xl font-extrabold  ">
               Pricing Plans
