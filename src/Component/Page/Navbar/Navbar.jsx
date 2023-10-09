@@ -21,7 +21,7 @@ const Navbar = () => {
   //     <li><Link to="/career">Career</Link></li>
   //   </>
   return (
-    <div className="border-b ">
+    <div className="border-b   ">
       <div className="navbar bg-base-100 justify-between my-3">
         <div className="navbar-start ">
           <div className="dropdown ">

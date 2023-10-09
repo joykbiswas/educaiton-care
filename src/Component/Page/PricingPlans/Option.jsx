@@ -6,18 +6,20 @@ const Option = ({option}) => {
     const {Name, Features, Price} = option;
     // console.log(option);
     return (
-        <div className="bg-red-300 rounded-md flex flex-col" >
-            <h3 className="text-4xl text-center ">{Price}</h3>
-            <h2 className="text-2xl text-center ">{Name}</h2>
+        <div className="border rounded-md flex flex-col p-3" >
+            <h2 className="text-3xl font-bold text-center ">{Name}</h2>
+            <h3 className="text-5xl text-center font-bold text-red-500">{Price} <br /></h3>
+            <p className='text-4xl text-center'>Monthly</p>
+            
 
-            <div className='flex-grow m-3'>
+            <div className='flex-grow m-3 mb-14'>
                 {
                     Features.map((feature,idx)=><Feature key={idx}
                     feature={feature}
                    ></Feature>)
                 }
             </div>
-            <button className='w-full p-2 mb-3 bg-green-300 hover:bg-green-500 rounded-xl'>Buy now</button>
+            <button className=' p-2 mb-3 bg-green-300 hover:bg-green-500 rounded-xl'>Buy now</button>
         </div>
     );
 };

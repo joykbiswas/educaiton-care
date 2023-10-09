@@ -8,7 +8,7 @@
             "1 Hour of Mentorship",
             "Guided Progress"
         ],
-        "Price": "$30  month"
+        "Price": "$30 "
     },
     {
         "ID": "002",
@@ -19,7 +19,7 @@
             "1 Hour of Mentorship",
             "Guided Progress"
         ],
-        "Price": "$50 per month"
+        "Price": "$50"
     },
     {
         "ID": "003",
@@ -30,6 +30,6 @@
             "1 Hour of Mentorship",
             "Guided Progress"
         ],
-        "Price": "$100 per month"
+        "Price": "$100"
     }
 ]

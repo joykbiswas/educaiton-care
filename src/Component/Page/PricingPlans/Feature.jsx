@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 const Feature = ({feature}) => {
     return (
         <div >
-             <p className="flex  ml-8 items-center"><IoMdCheckmarkCircle className="m-3 text-blue-600 text-xl"></IoMdCheckmarkCircle>{feature}</p>
+             <p className="flex text-xl ml-8  items-center"><IoMdCheckmarkCircle className="m-3 text-blue-600 text-xl"></IoMdCheckmarkCircle>{feature}</p>
         </div>
     );
 };

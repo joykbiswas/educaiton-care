@@ -40,11 +40,11 @@ const router = createBrowserRouter([
         },
         {
           path:"/about",
-          element:<About></About>
+          element:<PrivateRoute><About></About></PrivateRoute>
         },
         {
           path:"pricing",
-          element:<PricingPlans></PricingPlans>,
+          element:<PrivateRoute><PricingPlans></PricingPlans></PrivateRoute>,
           loader:()=>fetch('/price.json')
         }
       ]
