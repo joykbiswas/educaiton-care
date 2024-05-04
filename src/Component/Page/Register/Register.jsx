@@ -2,7 +2,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { FaGoogle } from "react-icons/fa";
 
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
 import Navbar from "../Navbar/Navbar";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
@@ -12,6 +12,7 @@ const Register = () => {
     useContext(AuthContext);
   const [error, setError] = useState("");
   const navigate = useNavigate();
+  const location = useLocation();
 
   const handleRegister = (e) => {
    
@@ -45,6 +46,7 @@ const Register = () => {
     googleLogin()
       .then((result) => {
         console.log(result.user);
+        navigate(location?.state ? location.state : '/')
         toast.success("google login");
       })
       .catch((error) => console.error(error));
